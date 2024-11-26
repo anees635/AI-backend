@@ -10,7 +10,7 @@ const port = process.env.PORT || 5000;
 app.use(express.urlencoded({extended: false}))
 app.use(bodyParser.json());
 
-const apiKey = process.env.GROQ_API_KEY ;
+const apiKey = process.env.GROQ_API_KEY || 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;
 const groq = new Groq({ apiKey: apiKey });
 
 
@@ -45,3 +45,5 @@ app.post("/translate", async (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
+
+
